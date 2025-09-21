@@ -20,6 +20,10 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.header-logo a {
+  color: #000;
+  text-decoration: none;
+}
 .header-logo h1 {
   margin: 0;
   font-family: Inter, sans-serif;
@@ -86,7 +90,9 @@ body {
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
 }
-
+.content {
+  margin-bottom: 96px;
+}
 .content-box {
   display: flex;
   justify-content: space-between;
@@ -95,6 +101,7 @@ body {
 .content-main {
   flex-grow: 1;
 }
+
 .content-main__title {
   margin-top: 0;
   margin-bottom: 25px;
@@ -110,6 +117,7 @@ body {
 }
 .content-cards__item {
   width: calc((100% - (30px * 2)) / 3);
+  text-decoration: none;
 }
 .content-cards__item--img {
   display: block;
@@ -158,6 +166,149 @@ body {
 }
 .content-sidebar {
   width: 262px;
+  min-width: 262px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content-sidebar__info {
+  margin-bottom: 120px;
+}
+.content-sidebar__info--title {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+.content-sidebar__info__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.content-sidebar__info__item h5 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: rgba(0, 0, 0, 1);
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+}
+.content-sidebar__info__item p {
+  color: rgba(0, 0, 0, 1);
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin: 0;
+}
+.content-sidebar__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.content-sidebar__footer p,
+.content-sidebar__footer a {
+  color: rgba(170, 170, 170, 1);
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin: 0;
+  display: block;
+}
+.content-sidebar__footer a:hover {
+  color: rgba(255, 73, 73, 1);
+}
+
+/* film.html */
+
+.content-film {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+}
+.content-film__img {
+  width: calc((100% - 28px) / 2);
+  display: flex;
+  justify-content: center;
+}
+.content-film__img img {
+  width: 100%;
+  display: block;
+  max-width: 450px;
+}
+.content-film__info {
+  width: calc((100% - 28px) / 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+.content-film__info__content > *:last-child {
+  margin-bottom: 0;
+}
+.content-film__info__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 3px;
+}
+.content-film__info__title h1,
+.content-film__info__title p {
+  color: rgba(0, 0, 0, 1);
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  margin: 0;
+  line-height: 29px;
+}
+.content-film__info__title h1 {
+  font-weight: 700;
+}
+.content-film__info__title p {
+  font-weight: 400;
+}
+.content-film__info__description {
+  margin-top: 0;
+  color: rgba(134, 134, 134, 1);
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 2px;
+}
+.content-film__info__rating {
+  color: rgba(4, 163, 30, 1);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-top: 0;
+  margin-bottom: 29px;
+}
+.content-film__info__text {
+  color: rgba(0, 0, 0, 1);
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+.content-film__info__controls button {
+  border-radius: 5px;
+  background: rgba(255, 73, 73, 1);
+  color: rgba(255, 255, 255, 1);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  border: none;
+  outline: none;
+  padding: 16px 98px;
+  /* width: 264px;
+  height: 50px; */
+  cursor: pointer;
 }
 
 /* Медиа запросы */
@@ -165,6 +316,15 @@ body {
 @media (max-width: 991px) {
   .content-cards__item {
     width: calc((100% - (30px * 1)) / 2);
+  }
+  .content-film {
+    flex-direction: column;
+  }
+  .content-film__img {
+    width: 100%;
+  }
+  .content-film__info {
+    width: 100%;
   }
 }
 @media (max-width: 768px) {
@@ -188,5 +348,6 @@ body {
 @media (max-width: 480px) {
   .content-cards__item {
     width: 100%;
+    min-width: 100%;
   }
 }
